@@ -25,6 +25,7 @@ public class Car {
     private LocalDate firstDay;
     @ManyToOne
     @JoinColumn(name = "mechanic")
+    @EqualsAndHashCode.Exclude
     private Mechanic mechanic;
 
     @Override

@@ -1,9 +1,6 @@
 package org.example.AUI.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.io.Serializable;
@@ -14,6 +11,7 @@ import java.util.UUID;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
+@ToString
 @EqualsAndHashCode
 @Builder
 @Entity
@@ -22,18 +20,9 @@ public class Mechanic {
     @Id
     private UUID NIP;
     private String name;
-    @OneToMany(mappedBy = "mechanic")
+    @OneToMany(mappedBy = "mechanic", cascade = CascadeType.REMOVE)
+    @EqualsAndHashCode.Exclude
+    @ToString.Exclude
     private List<Car> cars;
 
-    @Override
-    public String toString() {
-        String carsString = "";
-        for (Car c : this.cars){
-            carsString += c.getBrand() + "\n";
-        }
-        return "Mechanic{" +
-                "NIP=" + NIP +
-                ", name='" + name + '\'' +
-                ", cars=" + carsString;
-    }
 }
