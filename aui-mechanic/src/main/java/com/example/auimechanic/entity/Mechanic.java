@@ -1,10 +1,8 @@
-package org.example.AUI.entity;
+package com.example.auimechanic.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.io.Serializable;
-import java.util.List;
 import java.util.UUID;
 
 @Getter
@@ -20,9 +18,4 @@ public class Mechanic {
     @Id
     private UUID NIP;
     private String name;
-    @OneToMany(mappedBy = "mechanic", cascade = CascadeType.REMOVE)
-    @EqualsAndHashCode.Exclude
-    @ToString.Exclude
-    private List<Car> cars;
-
 }

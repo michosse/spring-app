@@ -1,9 +1,8 @@
-package org.example.AUI.entity;
+package com.example.auicar.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.io.Serializable;
 import java.util.List;
 import java.util.UUID;
 

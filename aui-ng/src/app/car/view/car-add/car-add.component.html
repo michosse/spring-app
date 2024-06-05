@@ -1,0 +1,12 @@
+<h1>Dodaj samochód</h1>
+<form #form="ngForm" (ngSubmit)="onSubmit()">
+  <label for="brand">Marka:</label>
+  <input id="brand" name="brand" [(ngModel)]="brand" required><br>
+  <label for="firstDay">Data:</label>
+  <input id="firstDay" name="firstDay" [(ngModel)]="firstDay" required><br>
+  <label for="mechanicNip">Nip mechanika:</label>
+  <select id="mechanicNip" name="mechanicNip" [(ngModel)]="mechanicNip" required>
+    <option *ngFor="let m of mechanics?.mechanics" [ngValue]="m.nip">{{m.name}}</option>
+  </select><br>
+  <button type="submit">Dodaj</button>
+</form>
