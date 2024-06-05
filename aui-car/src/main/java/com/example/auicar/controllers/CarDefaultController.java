@@ -19,6 +19,7 @@ import java.util.UUID;
 @RestController
 @Log
 @RequestMapping("/api")
+@CrossOrigin(origins = "*")
 public class CarDefaultController {
     private final CarDefaultService service;
     private final MechanicDefaultService mechanicService;

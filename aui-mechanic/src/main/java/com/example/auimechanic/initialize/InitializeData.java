@@ -26,7 +26,7 @@ public class InitializeData implements InitializingBean {
                 .NIP(UUID.fromString("ed8e72a6-8a3b-11ee-b9d1-0242ac120002"))
                 .name("Jack")
                 .build();
-        mechanicDefaultService.create(bob);
-        mechanicDefaultService.create(jack);
+        mechanicDefaultService.init(bob);
+        mechanicDefaultService.init(jack);
     }
 }

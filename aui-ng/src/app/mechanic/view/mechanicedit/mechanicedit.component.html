@@ -1,0 +1,8 @@
+<h1>Edytuj Mechanika</h1>
+<form #form="ngForm" (ngSubmit)="onSubmit()">
+  <label for="nip">Nip:</label>
+    <input id="nip" name="nip" [(ngModel)]="nip" readonly>
+  <label for="name">Nazwa:</label>
+    <input id="name" name="name" [(ngModel)]="name" required>
+  <button type="submit">Edytuj</button>
+</form>

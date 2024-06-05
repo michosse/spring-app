@@ -35,6 +35,9 @@ public class MechanicDefaultService {
         repository.save(mechanic);
         restRepository.save(mechanic);
     }
+    public void init(Mechanic mechanic){
+        repository.save(mechanic);
+    }
     public void delete(Mechanic mechanic){
         Optional<Mechanic> m = repository.findById(mechanic.getNIP());
         if (m.isPresent()) {

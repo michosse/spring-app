@@ -1,0 +1,12 @@
+<div *ngIf="mechanics">
+  <h1>Mechanicy</h1>
+  <ul>
+    <li *ngFor="let m of mechanics.mechanics">
+      {{m.name}}, {{m.nip}}
+      <br><button (click)="onDelete(m)">Usuń</button>
+      <a [routerLink]="['mechanics',m.nip,'edit']"><button>Edytuj</button></a>
+      <a [routerLink]="['mechanics',m.nip,'details']"><button>Szczegóły</button></a>
+    </li>
+  </ul>
+</div>
+<a [routerLink]="['mechanics/add']"><button>Dodaj mechanika</button></a>

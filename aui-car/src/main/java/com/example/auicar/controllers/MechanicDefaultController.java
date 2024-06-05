@@ -19,6 +19,7 @@ import java.util.stream.Collectors;
 @RestController
 @Log
 @RequestMapping("/api")
+@CrossOrigin(origins = "*")
 public class MechanicDefaultController {
 
     private final MechanicDefaultService service;

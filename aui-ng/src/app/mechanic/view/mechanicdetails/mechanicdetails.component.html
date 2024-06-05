@@ -1,0 +1,15 @@
+<div *ngIf="mechanic">
+  <h1>{{mechanic.name}}</h1>
+  nip: {{mechanic.nip}}<br>
+  samochody:<br>
+    <ul>
+      <li *ngFor="let c of cars">
+        {{c.vin}}, {{c.brand}}, {{c.firstDay}}
+        <button (click)="onDelete(c)">Usuń</button>
+        <a [routerLink]="['/cars',c.vin,'edit']"><button>Edytuj</button></a>
+        <a [routerLink]="['/mechanics',mechanic.nip,'cars',c.vin,'details']"><button>Szczegóły</button></a>
+      </li>
+    </ul>
+  <a [routerLink]="['/cars','add']"><button>Dodaj samochód</button></a>
+  </div>
+
